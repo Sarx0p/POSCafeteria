@@ -1,6 +1,6 @@
 ﻿namespace proyectoPOScafeteria.Capa_Presentacion
 {
-    partial class FrmClientes
+    partial class FrmCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,14 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cbxTipoCliente = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
-            this.rbtInactivo = new System.Windows.Forms.RadioButton();
-            this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 37);
+            this.label2.Location = new System.Drawing.Point(6, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 23);
             this.label2.TabIndex = 1;
@@ -74,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 111);
+            this.label3.Location = new System.Drawing.Point(6, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 23);
             this.label3.TabIndex = 2;
@@ -103,13 +104,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.chkEstado);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCorreoElectronico);
             this.groupBox1.Controls.Add(this.txtTelefonoCliente);
             this.groupBox1.Controls.Add(this.txtNombreCliente);
-            this.groupBox1.Controls.Add(this.rbtInactivo);
-            this.groupBox1.Controls.Add(this.rbtActivo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbxTipoCliente);
             this.groupBox1.Controls.Add(this.label3);
@@ -117,10 +119,38 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(75, 230);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(638, 157);
+            this.groupBox1.Size = new System.Drawing.Size(638, 189);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(89, 38);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(78, 30);
+            this.txtId.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 23);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Id";
+            // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(396, 123);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(161, 27);
+            this.chkEstado.TabIndex = 12;
+            this.chkEstado.Text = "Activo o Inactivo";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -149,39 +179,17 @@
             // 
             // txtTelefonoCliente
             // 
-            this.txtTelefonoCliente.Location = new System.Drawing.Point(85, 108);
+            this.txtTelefonoCliente.Location = new System.Drawing.Point(89, 133);
             this.txtTelefonoCliente.Name = "txtTelefonoCliente";
             this.txtTelefonoCliente.Size = new System.Drawing.Size(125, 30);
             this.txtTelefonoCliente.TabIndex = 8;
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(85, 34);
+            this.txtNombreCliente.Location = new System.Drawing.Point(89, 77);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(125, 30);
             this.txtNombreCliente.TabIndex = 7;
-            // 
-            // rbtInactivo
-            // 
-            this.rbtInactivo.AutoSize = true;
-            this.rbtInactivo.Location = new System.Drawing.Point(470, 123);
-            this.rbtInactivo.Name = "rbtInactivo";
-            this.rbtInactivo.Size = new System.Drawing.Size(97, 27);
-            this.rbtInactivo.TabIndex = 6;
-            this.rbtInactivo.TabStop = true;
-            this.rbtInactivo.Text = " Inactivo";
-            this.rbtInactivo.UseVisualStyleBackColor = true;
-            // 
-            // rbtActivo
-            // 
-            this.rbtActivo.AutoSize = true;
-            this.rbtActivo.Location = new System.Drawing.Point(396, 125);
-            this.rbtActivo.Name = "rbtActivo";
-            this.rbtActivo.Size = new System.Drawing.Size(84, 27);
-            this.rbtActivo.TabIndex = 5;
-            this.rbtActivo.TabStop = true;
-            this.rbtActivo.Text = "Activo ";
-            this.rbtActivo.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
@@ -260,7 +268,7 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // FrmClientes
+            // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,7 +284,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "FrmClientes";
+            this.Name = "FrmCliente";
             this.Text = "Formulario de Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.groupBox1.ResumeLayout(false);
@@ -301,13 +309,14 @@
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.TextBox txtTelefonoCliente;
         private System.Windows.Forms.TextBox txtNombreCliente;
-        private System.Windows.Forms.RadioButton rbtInactivo;
-        private System.Windows.Forms.RadioButton rbtActivo;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.CheckBox chkEstado;
     }
 }

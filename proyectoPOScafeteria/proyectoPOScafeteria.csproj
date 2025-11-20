@@ -56,11 +56,11 @@
     <Compile Include="Capa Presentacion\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capa Presentacion\FrmClientes.cs">
+    <Compile Include="Capa Presentacion\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capa Presentacion\FrmClientes.Designer.cs">
-      <DependentUpon>FrmClientes.cs</DependentUpon>
+    <Compile Include="Capa Presentacion\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Capa Presentacion\FrmProductos.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="Capa Presentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capa Presentacion\FrmClientes.resx">
-      <DependentUpon>FrmClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Capa Presentacion\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa Presentacion\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
@@ -117,6 +117,42 @@
   <ItemGroup>
     <Folder Include="Capa Datos\" />
     <Folder Include="Capa Negocio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientesicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventarioicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productoicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saliricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventaicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientesicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventarioicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productoicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saliricon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventaicon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

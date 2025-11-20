@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.panelizquierdo = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentaRapida = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.productoMasVendidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelizquierdo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,18 +73,21 @@
             this.panelizquierdo.Controls.Add(this.btnCorteCaja);
             this.panelizquierdo.Controls.Add(this.btnInventario);
             this.panelizquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelizquierdo.Location = new System.Drawing.Point(0, 30);
+            this.panelizquierdo.Location = new System.Drawing.Point(0, 28);
             this.panelizquierdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelizquierdo.Name = "panelizquierdo";
-            this.panelizquierdo.Size = new System.Drawing.Size(181, 420);
+            this.panelizquierdo.Size = new System.Drawing.Size(181, 422);
             this.panelizquierdo.TabIndex = 0;
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(31, 166);
+            this.btnClientes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Image = global::proyectoPOScafeteria.Properties.Resources.clientesicon1;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(12, 166);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(125, 37);
+            this.btnClientes.Size = new System.Drawing.Size(144, 37);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -92,20 +95,27 @@
             // 
             // btnVentaRapida
             // 
-            this.btnVentaRapida.Location = new System.Drawing.Point(31, 38);
+            this.btnVentaRapida.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentaRapida.Image = global::proyectoPOScafeteria.Properties.Resources.ventaicon1;
+            this.btnVentaRapida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentaRapida.Location = new System.Drawing.Point(12, 32);
             this.btnVentaRapida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVentaRapida.Name = "btnVentaRapida";
-            this.btnVentaRapida.Size = new System.Drawing.Size(125, 37);
+            this.btnVentaRapida.Size = new System.Drawing.Size(144, 37);
             this.btnVentaRapida.TabIndex = 0;
             this.btnVentaRapida.Text = "Venta Rapida";
+            this.btnVentaRapida.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVentaRapida.UseVisualStyleBackColor = true;
             // 
             // btnProducto
             // 
-            this.btnProducto.Location = new System.Drawing.Point(31, 101);
+            this.btnProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.Image = global::proyectoPOScafeteria.Properties.Resources.productoicon1;
+            this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProducto.Location = new System.Drawing.Point(12, 98);
             this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(125, 37);
+            this.btnProducto.Size = new System.Drawing.Size(144, 37);
             this.btnProducto.TabIndex = 1;
             this.btnProducto.Text = "Producto";
             this.btnProducto.UseVisualStyleBackColor = true;
@@ -113,30 +123,40 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(31, 374);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Image = global::proyectoPOScafeteria.Properties.Resources.saliricon1;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(12, 374);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(125, 37);
+            this.btnSalir.Size = new System.Drawing.Size(140, 37);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnCorteCaja
             // 
-            this.btnCorteCaja.Location = new System.Drawing.Point(31, 309);
+            this.btnCorteCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorteCaja.Image = global::proyectoPOScafeteria.Properties.Resources.cajaicon1;
+            this.btnCorteCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCorteCaja.Location = new System.Drawing.Point(12, 309);
             this.btnCorteCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCorteCaja.Name = "btnCorteCaja";
-            this.btnCorteCaja.Size = new System.Drawing.Size(125, 37);
+            this.btnCorteCaja.Size = new System.Drawing.Size(144, 35);
             this.btnCorteCaja.TabIndex = 4;
             this.btnCorteCaja.Text = "Corte de Caja";
+            this.btnCorteCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCorteCaja.UseVisualStyleBackColor = true;
             // 
             // btnInventario
             // 
-            this.btnInventario.Location = new System.Drawing.Point(31, 240);
+            this.btnInventario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.Image = global::proyectoPOScafeteria.Properties.Resources.inventarioicon1;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(12, 240);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(125, 37);
+            this.btnInventario.Size = new System.Drawing.Size(140, 37);
             this.btnInventario.TabIndex = 3;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
@@ -144,17 +164,18 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(181, 30);
+            this.panel2.Location = new System.Drawing.Point(181, 28);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(619, 420);
+            this.panel2.Size = new System.Drawing.Size(619, 422);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::proyectoPOScafeteria.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(117, 75);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -175,7 +196,7 @@
             this.menusuperior.Location = new System.Drawing.Point(0, 0);
             this.menusuperior.Name = "menusuperior";
             this.menusuperior.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menusuperior.Size = new System.Drawing.Size(800, 30);
+            this.menusuperior.Size = new System.Drawing.Size(800, 28);
             this.menusuperior.TabIndex = 2;
             this.menusuperior.Text = "menuStrip1";
             // 
@@ -186,7 +207,7 @@
             this.categoriaToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.gestionToolStripMenuItem.Text = "Gestion";
             // 
             // productosToolStripMenuItem
@@ -258,7 +279,7 @@
             this.registroDeVentasToolStripMenuItem,
             this.historialDeVentasToolStripMenuItem});
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.ventaToolStripMenuItem.Text = "Venta";
             // 
             // registroDeVentasToolStripMenuItem
@@ -280,7 +301,7 @@
             this.productoMasVendidoToolStripMenuItem,
             this.cierreDeCajaToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // reporteDiarioToolStripMenuItem
@@ -304,8 +325,19 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Script MT Bold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(81, 319);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cafeteria y Reposteria Dulce Aroma";
             // 
             // FrmMenuPrincipal
             // 
@@ -319,10 +351,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBox = false;
             this.Name = "FrmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cafeteria Dulce Aroma";
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelizquierdo.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menusuperior.ResumeLayout(false);
             this.menusuperior.PerformLayout();
@@ -361,6 +395,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDiarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoMasVendidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cierreDeCajaToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

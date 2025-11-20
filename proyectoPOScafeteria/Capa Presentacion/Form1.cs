@@ -55,8 +55,8 @@ namespace proyectoPOScafeteria
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FrmClientes frm = new FrmClientes();
-            frm.Show(); // abre el formulario normal
+            FrmCliente frm = new FrmCliente();
+            frm.ShowDialog(); // abre el formulario normal
         }
     }
     }
