@@ -275,7 +275,7 @@
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.Size = new System.Drawing.Size(687, 114);
+            this.dgvProductos.Size = new System.Drawing.Size(710, 114);
             this.dgvProductos.TabIndex = 16;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 

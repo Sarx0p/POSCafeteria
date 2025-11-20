@@ -27,7 +27,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 { 
                     Id = 1, Nombre = "Carlos Díaz", 
                     Telefono = "1234-5678", 
-                    Correo = "carlos@mail.com", 
+                    Correo = "carlos@gmail.com", 
                     TipoCliente = "Normal" 
                 });
 
@@ -35,8 +35,8 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 { 
                     Id = 2, Nombre = "María García", 
                     Telefono = "7777-8888",
-                    Correo = "maria@mail.com",
-                    TipoCliente = "Preferencial" 
+                    Correo = "maria@gmail.com",
+                    TipoCliente = "Frecuente" 
                 });
 
                 listaClientes.Add(new Cliente
@@ -44,8 +44,8 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                     Id = 3,
                     Nombre = "Pedro López",
                     Telefono = "9999-1122",
-                    Correo = "pedro@mail.com",
-                    TipoCliente = "Especial"
+                    Correo = "pedro@gmail.com",
+                    TipoCliente = "Empresarial"
                 });
                             }
 

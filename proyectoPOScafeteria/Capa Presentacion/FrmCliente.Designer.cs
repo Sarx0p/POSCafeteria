@@ -96,7 +96,7 @@
             this.cbxTipoCliente.Items.AddRange(new object[] {
             "Normal ",
             "Frecuente",
-            "Empresa"});
+            "Empresarial"});
             this.cbxTipoCliente.Location = new System.Drawing.Point(396, 81);
             this.cbxTipoCliente.Name = "cbxTipoCliente";
             this.cbxTipoCliente.Size = new System.Drawing.Size(112, 31);
@@ -235,7 +235,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpiar.Location = new System.Drawing.Point(746, 339);
+            this.btnLimpiar.Location = new System.Drawing.Point(746, 344);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(92, 32);
             this.btnLimpiar.TabIndex = 9;
@@ -246,12 +246,13 @@
             // dgvClientes
             // 
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(75, 74);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(774, 129);
+            this.dgvClientes.Size = new System.Drawing.Size(774, 148);
             this.dgvClientes.TabIndex = 10;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -260,7 +261,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(746, 377);
+            this.btnVolver.Location = new System.Drawing.Point(746, 388);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(92, 31);
             this.btnVolver.TabIndex = 11;
@@ -273,7 +274,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(932, 455);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnLimpiar);
@@ -285,6 +286,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario de Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.groupBox1.ResumeLayout(false);
