@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(49, 223);
+            this.groupBox1.Location = new System.Drawing.Point(136, 295);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -99,7 +99,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(104, 82);
+            this.txtDescripcion.Location = new System.Drawing.Point(109, 82);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(384, 30);
@@ -115,10 +115,10 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(335, 38);
+            this.txtNombre.Location = new System.Drawing.Point(319, 38);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(153, 30);
+            this.txtNombre.Size = new System.Drawing.Size(169, 30);
             this.txtNombre.TabIndex = 8;
             // 
             // txtId
@@ -126,7 +126,8 @@
             this.txtId.Location = new System.Drawing.Point(83, 35);
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(131, 30);
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(86, 30);
             this.txtId.TabIndex = 7;
             // 
             // chkEstado
@@ -152,7 +153,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(256, 38);
+            this.label6.Location = new System.Drawing.Point(236, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 23);
             this.label6.TabIndex = 4;
@@ -200,7 +201,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnNuevo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevo.Location = new System.Drawing.Point(617, 223);
+            this.btnNuevo.Location = new System.Drawing.Point(37, 522);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(155, 34);
@@ -214,10 +215,10 @@
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(617, 271);
+            this.btnEditar.Location = new System.Drawing.Point(227, 522);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(155, 34);
+            this.btnEditar.Size = new System.Drawing.Size(104, 34);
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Modificar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -228,10 +229,10 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(617, 318);
+            this.btnEliminar.Location = new System.Drawing.Point(368, 522);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(155, 34);
+            this.btnEliminar.Size = new System.Drawing.Size(96, 34);
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -242,10 +243,10 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpiar.Location = new System.Drawing.Point(617, 359);
+            this.btnLimpiar.Location = new System.Drawing.Point(504, 522);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(155, 34);
+            this.btnLimpiar.Size = new System.Drawing.Size(88, 34);
             this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -256,10 +257,10 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(617, 404);
+            this.btnVolver.Location = new System.Drawing.Point(633, 522);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(155, 34);
+            this.btnVolver.Size = new System.Drawing.Size(79, 34);
             this.btnVolver.TabIndex = 15;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -275,7 +276,7 @@
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.Size = new System.Drawing.Size(710, 114);
+            this.dgvProductos.Size = new System.Drawing.Size(682, 209);
             this.dgvProductos.TabIndex = 16;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -284,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(774, 582);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);

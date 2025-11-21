@@ -35,7 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCorteCaja = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.                                             Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menusuperior = new System.Windows.Forms.MenuStrip();

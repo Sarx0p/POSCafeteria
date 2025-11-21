@@ -31,6 +31,19 @@ namespace proyectoPOScafeteria.Capa_Entidades
                 var patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
                 return Regex.IsMatch(email, patron);
             }
-
+        public static bool Sololetrayespacios(string texto)
+        {
+            return texto.All(c => char.IsLetter(c) || c == ' ');
         }
+
+        // Solo números
+        public static bool SoloNumeros(string texto)
+        {
+            return texto.All(char.IsDigit);
+        }
+
+        
+      
+
+    }
     }

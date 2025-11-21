@@ -13,20 +13,37 @@ namespace proyectoPOScafeteria.Capa_Presentacion
 {
     public partial class FrmProductos : Form
     {
-        public FrmProductos()
+        public FrmProductos() 
         {
             InitializeComponent();
             
         }
         //Creacion de una lista estatica que simulara la DB
         public static List<Producto> listaProductos = new List<Producto>();
+
+        private void DeshabilitarBotones()
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnNuevo.Enabled = true;
+        }
+        private void HabilitarBotones()
+        {
+            btnNuevo.Enabled = false;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnLimpiar.Enabled = true;
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
         private void FrmProductos_Load(object sender, EventArgs e)
+
         {
+            DeshabilitarBotones(); //al iniciar, no esten activos
             //Cargar los datos iniciales
             if (!listaProductos.Any())
             {// cada vez que se cargue el formulario, si la lista esta vacia,
@@ -85,6 +102,22 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 return;
             }
 
+            if (!Validaciones.Sololetrayespacios(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre solo puede contener letras y espacios.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("La descripción es obligatoria.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDescripcion.Focus();
+                return;
+            }
+
 
             if (!Validaciones.EsDecimal(txtPrecio.Text))
             {
@@ -95,7 +128,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             }//valida que el stock ingresado sea un entero
             if (!Validaciones.EsEntero(txtStock.Text))
             {
-                MessageBox.Show("el stock del producto debe ser un valor entero.", "Error",
+                MessageBox.Show("El stock del producto debe ser un valor entero.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtStock.Focus();
                 return;
@@ -169,6 +202,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefrescarGrid();//refrescar el datagridview
         LimpiarCampos();//limpiar los controles
+            DeshabilitarBotones();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -193,6 +227,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 listaProductos.Remove(prod);//con remove elimino el producto de la lista
                 RefrescarGrid();//refrescar el datagridview
                 LimpiarCampos();//limpiar los controles
+                DeshabilitarBotones();
             }
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -221,6 +256,8 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
             txtStock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
             chkEstado.Checked = (bool)dgvProductos.CurrentRow.Cells["Estado"].Value;
+
+            HabilitarBotones();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

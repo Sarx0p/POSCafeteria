@@ -57,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(366, 24);
+            this.label1.Location = new System.Drawing.Point(340, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 28);
             this.label1.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(75, 230);
+            this.groupBox1.Location = new System.Drawing.Point(136, 280);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(638, 189);
             this.groupBox1.TabIndex = 5;
@@ -196,7 +196,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnNuevo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevo.Location = new System.Drawing.Point(746, 228);
+            this.btnNuevo.Location = new System.Drawing.Point(97, 521);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(92, 32);
             this.btnNuevo.TabIndex = 6;
@@ -209,7 +209,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(746, 266);
+            this.btnEditar.Location = new System.Drawing.Point(235, 521);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 32);
             this.btnEditar.TabIndex = 7;
@@ -222,7 +222,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(746, 304);
+            this.btnEliminar.Location = new System.Drawing.Point(379, 521);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(92, 29);
             this.btnEliminar.TabIndex = 8;
@@ -235,7 +235,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpiar.Location = new System.Drawing.Point(746, 344);
+            this.btnLimpiar.Location = new System.Drawing.Point(532, 518);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(92, 32);
             this.btnLimpiar.TabIndex = 9;
@@ -245,6 +245,7 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -252,7 +253,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(774, 148);
+            this.dgvClientes.Size = new System.Drawing.Size(740, 179);
             this.dgvClientes.TabIndex = 10;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -261,7 +262,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(746, 388);
+            this.btnVolver.Location = new System.Drawing.Point(682, 518);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(92, 31);
             this.btnVolver.TabIndex = 11;
@@ -274,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(932, 455);
+            this.ClientSize = new System.Drawing.Size(888, 594);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnLimpiar);

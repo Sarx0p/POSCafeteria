@@ -15,12 +15,28 @@ namespace proyectoPOScafeteria.Capa_Presentacion
     {
         public static List<Cliente> listaClientes = new List<Cliente>();
 
+        private void DeshabilitarBotones()
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnNuevo.Enabled = true;
+        }
+        private void HabilitarBotones()
+        {
+            btnNuevo.Enabled = false;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnLimpiar.Enabled = true;
+        }
+
         public FrmCliente()
         {
             InitializeComponent();
         }
         private void FrmClientes_Load(object sender, EventArgs e)
         {
+            DeshabilitarBotones();
             if (!listaClientes.Any())
             {
                 listaClientes.Add(new Cliente 
@@ -66,9 +82,22 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 return;
             }
 
+            if (!Validaciones.Sololetrayespacios(txtNombreCliente.Text))
+            {
+                MessageBox.Show("El nombre solo puede contener letras y espacios.");
+                txtNombreCliente.Focus();
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtTelefonoCliente.Text))
             {
                 MessageBox.Show("El teléfono es obligatorio.");
+                return;
+            }
+            if (!Validaciones.SoloNumeros(txtTelefonoCliente.Text))
+            {
+                MessageBox.Show("El teléfono solo puede contener números.");
+                txtTelefonoCliente.Focus();
                 return;
             }
 
@@ -77,6 +106,14 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 MessageBox.Show("El correo es obligatorio.");
                 return;
             }
+
+            if (!Validaciones.EsCorreoValido(txtCorreoElectronico.Text))
+            {
+                MessageBox.Show("Debe ingresar un correo electrónico válido.");
+                txtCorreoElectronico.Focus();
+                return;
+            }
+
             int nuevoId = listaClientes.Any() ? listaClientes.Max(c => c.Id) + 1 : 1;
 
             var cli = new Cliente
@@ -115,6 +152,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             MessageBox.Show("Cliente actualizado.");
             RefrescarGrid();
             LimpiarCampos();
+            DeshabilitarBotones();
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -137,6 +175,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
                 listaClientes.Remove(cli);
                 RefrescarGrid();
                 LimpiarCampos();
+                DeshabilitarBotones();
             }
         }
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -148,6 +187,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             txtTelefonoCliente.Text = dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString();
             txtCorreoElectronico.Text = dgvClientes.CurrentRow.Cells["Correo"].Value.ToString();
             cbxTipoCliente.SelectedItem = dgvClientes.CurrentRow.Cells["TipoCliente"].Value.ToString();
+            HabilitarBotones();
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
 
