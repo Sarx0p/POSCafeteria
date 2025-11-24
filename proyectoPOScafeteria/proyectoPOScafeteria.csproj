@@ -46,10 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capa Datos\ClienteDAL.cs" />
+    <Compile Include="Capa Datos\Conexion.cs" />
     <Compile Include="Capa Entidades\Cliente.cs" />
+    <Compile Include="Capa Entidades\Clientedos.cs" />
     <Compile Include="Capa Entidades\Producto.cs" />
     <Compile Include="Capa Entidades\Validaciones.cs" />
     <Compile Include="Capa Entidades\Ventas.cs" />
+    <Compile Include="Capa Negocio\ClienteBLL.cs" />
     <Compile Include="Capa Presentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +65,12 @@
     </Compile>
     <Compile Include="Capa Presentacion\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa Presentacion\FrmClientedos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa Presentacion\FrmClientedos.Designer.cs">
+      <DependentUpon>FrmClientedos.cs</DependentUpon>
     </Compile>
     <Compile Include="Capa Presentacion\FrmProductos.cs">
       <SubType>Form</SubType>
@@ -114,10 +124,7 @@
   <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Capa Datos\" />
-    <Folder Include="Capa Negocio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\cajaicon.png" />
   </ItemGroup>
