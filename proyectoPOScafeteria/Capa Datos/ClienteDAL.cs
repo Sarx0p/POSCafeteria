@@ -11,98 +11,88 @@ using System.Threading.Tasks;
 namespace proyectoPOScafeteria.Capa_Datos
 {
     public class ClienteDAL
-
     {
-
         public DataTable Listar()
-    {
-        DataTable dt = new DataTable();
-        using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
         {
-            string sql = "SELECT Id, NombreCompleto, CorreoC, Telefono, TipoCliente, Estado From Cliente";
-            using (SqlCommand cmd = new SqlCommand(sql, cn))
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
                 cn.Open();
-                new SqlDataAdapter(cmd).Fill(dt);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM cliente", cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            
+        }
+
+        public int Insertar(Clientedos c)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = @"INSERT INTO Cliente (NombreCompleto, CorreoC, Telefono, Id_TipoCliente, Estado)
+                           VALUES (@NombreCompleto, @CorreoC, @Telefono, @Id_TipoCliente, @Estado);
+                           SELECT SCOPE_IDENTITY();";
+
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@NombreCompleto", c.Nombre);
+                    cmd.Parameters.AddWithValue("@CorreoC", c.Correo);
+                    cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
+                    cmd.Parameters.AddWithValue("@Id_TipoCliente", c.TipoCliente);
+                    cmd.Parameters.AddWithValue("@Estado", c.Estado);
+
+                    cn.Open();
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
             }
         }
-        return dt;
-        }
-    public int Insertar(Clientedos c)
-    {
 
-        using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+        public bool Actualizar(Clientedos c)
         {
-            string sql = @"INSERT INTO cliente(NombreCompleto, CorreoC, Telefono, Id_TipoCliente, Estado) 
-        VALUES(@Nombre, @CorreoC, @Telefono, @TipoCliente, @Estado); SELECT SCOPE IDENTITY();";
-
-            using (SqlCommand cmd = new SqlCommand(sql, cn))
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                cmd.Parameters.AddWithValue("@Nombre", c.Nombre);
-                cmd.Parameters.AddWithValue("@CorreoC", c.Correo);
-                cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
-                cmd.Parameters.AddWithValue("@TipoCLiente", c.TipoCliente);
-                cmd.Parameters.AddWithValue("@Estado", c.Estado);
-                cn.Open();
+                string sql = @"UPDATE Cliente 
+                           SET NombreCompleto=@NombreCompleto,
+                               CorreoC=@CorreoC,
+                               Telefono=@Telefono,
+                               Id_TipoCliente=@Id_TipoCliente,
+                               Estado=@Estado
+                           WHERE Id=@Id;";
 
-                return Convert.ToInt32(cmd.ExecuteScalar());
-            }
-        }
-    }
-        
-            public bool Actualizar(Clientedos c)
-        {
-        using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
-            {
-            string sql = @"UPDATE Cliente SET Nombre=@nombre, CorreoC=@Correo, Telefono=@Telefono,TipoCliente=@Id_TipoCliente, Estado=Estado WHERE Id=@Id;";
-
-            using (SqlCommand cmd = new SqlCommand(sql, cn))
-            {
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
                     cmd.Parameters.AddWithValue("@Id", c.Id);
                     cmd.Parameters.AddWithValue("@NombreCompleto", c.Nombre);
                     cmd.Parameters.AddWithValue("@CorreoC", c.Correo);
                     cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
-                    cmd.Parameters.AddWithValue("@TipoCliente", c.TipoCliente);
+                    cmd.Parameters.AddWithValue("@Id_TipoCliente", c.TipoCliente);
                     cmd.Parameters.AddWithValue("@Estado", c.Estado);
 
                     cn.Open();
                     return cmd.ExecuteNonQuery() > 0;
+                }
             }
         }
-     }
-            public bool Eliminar (int Id)
-        {
-            using(SqlConnection cn = new SqlConnection(Conexion.Cadena))
-            {
-                string sql = "DELETE FROM cliente WHERE Id=@Id";
-                using (SqlCommand cmd = new SqlCommand(sql, cn))
 
-            {
-                    cmd.Parameters.AddWithValue("@Id", Id);
-                    cn.Open() ;
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-
-            
-}
-}
-            public DataTable Buscar(string filtro)
+        public DataTable Buscar(string filtro)
         {
-            DataTable dt  = new DataTable();
+            DataTable dt = new DataTable();
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = @"SELECT Id, NombreCompleto, CorreoC,Telefono, TipoCliente, Estado FROM cliente WHERE NombreCompleto LIKE @filtro
-                OR Telefono Like @filtro";
+                string sql = @"SELECT Id, NombreCompleto, CorreoC, Telefono, Id_TipoCliente, Estado
+                           FROM Cliente
+                           WHERE NombreCompleto LIKE @filtro
+                           OR Telefono LIKE @filtro";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
                     cmd.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
-                    cn.Open() ;
+                    cn.Open();
                     new SqlDataAdapter(cmd).Fill(dt);
+                }
             }
-         }
-       }
+            return dt;
+        }
     }
-}
+    }
 
-    

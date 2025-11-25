@@ -16,30 +16,20 @@ namespace proyectoPOScafeteria.Capa_Negocio
         public DataTable Listar()
             { return dal.Listar(); }
 
-        public int Guardar(Clientedos c)
+        public int Guardar (Clientedos c)
         {
             if (string.IsNullOrWhiteSpace(c.Nombre))
                 throw new Exception("El nombre del cliente es obligatorio.");
             if (c.Id == 0)
             {
-                dal.Insertar(c);
+                return dal.Insertar(c);
             }
-            else {
+            else
+            {
                 dal.Actualizar(c);
-                return c.Id;    
+                return c.Id;
+            }
+}
 
-}
-}
-        public void Eliminar(int id)
-        {
-            dal.Eliminar (id);
-        }
-    
-        public DataTable Buscar (string Nombre) 
-        {
-            return dal.Buscar (Nombre);
-        {
-}
-}
 }
 }

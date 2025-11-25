@@ -92,6 +92,9 @@
     <EmbeddedResource Include="Capa Presentacion\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capa Presentacion\FrmClientedos.resx">
+      <DependentUpon>FrmClientedos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capa Presentacion\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
