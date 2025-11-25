@@ -12,7 +12,6 @@ namespace proyectoPOScafeteria.Capa_Entidades
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        public string TipoCliente { get; set; }
         public bool Estado { get; set; }
     }
 }

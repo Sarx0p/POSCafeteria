@@ -29,8 +29,8 @@ namespace proyectoPOScafeteria.Capa_Datos
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = @"INSERT INTO Cliente (NombreCompleto, CorreoC, Telefono, Id_TipoCliente, Estado)
-                           VALUES (@NombreCompleto, @CorreoC, @Telefono, @Id_TipoCliente, @Estado);
+                string sql = @"INSERT INTO Cliente (NombreCompleto, CorreoC, Telefono, Estado)
+                           VALUES (@NombreCompleto, @CorreoC, @Telefono, @Estado);
                            SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
@@ -38,7 +38,6 @@ namespace proyectoPOScafeteria.Capa_Datos
                     cmd.Parameters.AddWithValue("@NombreCompleto", c.Nombre);
                     cmd.Parameters.AddWithValue("@CorreoC", c.Correo);
                     cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
-                    cmd.Parameters.AddWithValue("@Id_TipoCliente", c.TipoCliente);
                     cmd.Parameters.AddWithValue("@Estado", c.Estado);
 
                     cn.Open();
@@ -55,7 +54,6 @@ namespace proyectoPOScafeteria.Capa_Datos
                            SET NombreCompleto=@NombreCompleto,
                                CorreoC=@CorreoC,
                                Telefono=@Telefono,
-                               Id_TipoCliente=@Id_TipoCliente,
                                Estado=@Estado
                            WHERE Id=@Id;";
 
@@ -65,11 +63,25 @@ namespace proyectoPOScafeteria.Capa_Datos
                     cmd.Parameters.AddWithValue("@NombreCompleto", c.Nombre);
                     cmd.Parameters.AddWithValue("@CorreoC", c.Correo);
                     cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
-                    cmd.Parameters.AddWithValue("@Id_TipoCliente", c.TipoCliente);
                     cmd.Parameters.AddWithValue("@Estado", c.Estado);
 
                     cn.Open();
                     return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool Eliminar(int id)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = "DELETE FROM cliente WHERE Id=@Id";
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                    //Elimina y devuelve true si se elimino al menos una fila
                 }
             }
         }
@@ -79,7 +91,7 @@ namespace proyectoPOScafeteria.Capa_Datos
             DataTable dt = new DataTable();
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = @"SELECT Id, NombreCompleto, CorreoC, Telefono, Id_TipoCliente, Estado
+                string sql = @"SELECT Id, NombreCompleto, CorreoC, Telefono, Estado
                            FROM Cliente
                            WHERE NombreCompleto LIKE @filtro
                            OR Telefono LIKE @filtro";
