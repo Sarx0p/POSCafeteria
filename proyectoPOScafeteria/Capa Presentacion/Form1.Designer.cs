@@ -35,7 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCorteCaja = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.panel2 = new System.                                             Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menusuperior = new System.Windows.Forms.MenuStrip();
@@ -73,10 +73,10 @@
             this.panelizquierdo.Controls.Add(this.btnCorteCaja);
             this.panelizquierdo.Controls.Add(this.btnInventario);
             this.panelizquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelizquierdo.Location = new System.Drawing.Point(0, 28);
+            this.panelizquierdo.Location = new System.Drawing.Point(0, 30);
             this.panelizquierdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelizquierdo.Name = "panelizquierdo";
-            this.panelizquierdo.Size = new System.Drawing.Size(191, 422);
+            this.panelizquierdo.Size = new System.Drawing.Size(191, 420);
             this.panelizquierdo.TabIndex = 0;
             // 
             // btnClientes
@@ -171,10 +171,10 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(191, 28);
+            this.panel2.Location = new System.Drawing.Point(191, 30);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(609, 422);
+            this.panel2.Size = new System.Drawing.Size(609, 420);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -211,7 +211,7 @@
             this.menusuperior.Location = new System.Drawing.Point(0, 0);
             this.menusuperior.Name = "menusuperior";
             this.menusuperior.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menusuperior.Size = new System.Drawing.Size(800, 28);
+            this.menusuperior.Size = new System.Drawing.Size(800, 30);
             this.menusuperior.TabIndex = 2;
             this.menusuperior.Text = "menuStrip1";
             // 

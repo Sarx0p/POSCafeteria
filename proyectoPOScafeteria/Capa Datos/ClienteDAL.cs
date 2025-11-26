@@ -80,6 +80,7 @@ namespace proyectoPOScafeteria.Capa_Datos
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     cn.Open();
+
                     return cmd.ExecuteNonQuery() > 0;
                     //Elimina y devuelve true si se elimino al menos una fila
                 }
@@ -105,6 +106,61 @@ namespace proyectoPOScafeteria.Capa_Datos
             }
             return dt;
         }
+
+        public bool ExisteNombre(string nombre)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = "SELECT COUNT(*) FROM Cliente WHERE NombreCompleto = @nombre";
+
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+
+                    cn.Open();
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+        }
+        public bool ExisteNombreEnOtroCliente(string nombre, int id)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = @"SELECT COUNT(*)
+                       FROM Cliente
+                       WHERE NombreCompleto = @nombre AND Id <> @id";
+
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cn.Open();
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+        }
+
+        public bool TieneVentasAsociadas(int id)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = @"SELECT COUNT(*) 
+                       FROM Venta 
+                       WHERE Id_Cliente = @idCliente";
+
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@IdCliente", id);
+
+                    cn.Open();
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+        }
+
     }
-    }
+}
+    
+    
 
