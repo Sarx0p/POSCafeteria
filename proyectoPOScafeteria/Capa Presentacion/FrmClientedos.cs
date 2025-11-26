@@ -87,7 +87,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         {
             if (e.RowIndex >= 0)
             {
-                txtId.Text = dgvClientesdos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                clienteId = Convert.ToInt32(dgvClientesdos.Rows[e.RowIndex].Cells["Id"].Value );
                 txtNombre.Text = dgvClientesdos.Rows[e.RowIndex].Cells["NombreCompleto"].Value.ToString();
                 txtTelefono.Text = dgvClientesdos.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
                 txtCorreo.Text = dgvClientesdos.Rows[e.RowIndex].Cells["CorreoC"].Value.ToString();
