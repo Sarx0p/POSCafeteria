@@ -64,7 +64,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(159, 126);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(450, 30);
             this.txtBuscar.TabIndex = 2;
@@ -74,20 +74,21 @@
             this.dgvCategoria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Location = new System.Drawing.Point(69, 226);
-            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.RowHeadersWidth = 51;
             this.dgvCategoria.RowTemplate.Height = 24;
             this.dgvCategoria.Size = new System.Drawing.Size(540, 173);
             this.dgvCategoria.TabIndex = 3;
+            this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Tan;
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnNuevo.Location = new System.Drawing.Point(69, 450);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(108, 42);
             this.btnNuevo.TabIndex = 4;
@@ -142,7 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCategoria";
             this.Text = "Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
