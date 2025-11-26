@@ -47,7 +47,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             txtBuscar.Clear();
             txtNombre.Focus();
 
-            clienteId = 0;//Resetea el ID del cliente 0 = Nuevo Registro
+            clienteId = 0;
         }
 
        
