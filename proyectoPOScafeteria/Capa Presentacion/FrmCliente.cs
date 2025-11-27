@@ -131,13 +131,9 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtId.Text, out int id))
-            {
-                MessageBox.Show("Seleccione primero un cliente de la tabla.");
-                return;
-            }
+            
 
-            var cli = listaClientes.FirstOrDefault(c => c.Id == id);
+            var cli = listaClientes.FirstOrDefault();
             if (cli == null)
             {
                 MessageBox.Show("Cliente no encontrado.");
@@ -156,13 +152,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtId.Text, out int id))
-            {
-                MessageBox.Show("Seleccione un cliente válido.");
-                return;
-            }
-
-            var cli = listaClientes.FirstOrDefault(c => c.Id == id);
+            var cli = listaClientes.FirstOrDefault();
             if (cli == null)
             {
                 MessageBox.Show("Cliente no encontrado.");
@@ -182,7 +172,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         {
             if (dgvClientes.CurrentRow == null) return;
 
-            txtId.Text = dgvClientes.CurrentRow.Cells["Id"].Value.ToString();
+           
             txtNombreCliente.Text = dgvClientes.CurrentRow.Cells["Nombre"].Value.ToString();
             txtTelefonoCliente.Text = dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString();
             txtCorreoElectronico.Text = dgvClientes.CurrentRow.Cells["Correo"].Value.ToString();
@@ -197,7 +187,6 @@ namespace proyectoPOScafeteria.Capa_Presentacion
 
         private void LimpiarCampos()
         {
-            txtId.Clear();
             txtNombreCliente.Clear();
             txtTelefonoCliente.Clear();
             txtCorreoElectronico.Clear();

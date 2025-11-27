@@ -68,18 +68,21 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(450, 30);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvCategoria
             // 
+            this.dgvCategoria.AllowUserToAddRows = false;
+            this.dgvCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCategoria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategoria.Location = new System.Drawing.Point(205, 184);
+            this.dgvCategoria.Location = new System.Drawing.Point(113, 190);
             this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.RowHeadersWidth = 51;
             this.dgvCategoria.RowTemplate.Height = 24;
-            this.dgvCategoria.Size = new System.Drawing.Size(310, 173);
+            this.dgvCategoria.Size = new System.Drawing.Size(482, 189);
             this.dgvCategoria.TabIndex = 3;
             this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
             // 
@@ -150,6 +153,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCategoria";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.FrmCategoria_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

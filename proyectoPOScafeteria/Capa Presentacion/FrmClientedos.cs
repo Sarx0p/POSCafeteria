@@ -40,7 +40,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         void Limpiar()
         {
             txtNombre.Clear();
-            txtId.Clear();
+            
             txtTelefono.Clear();
             txtCorreo.Clear();
             chkEstado.Checked = true;

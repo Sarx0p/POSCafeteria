@@ -40,7 +40,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(209, 65);
+            this.lblTitulo.Location = new System.Drawing.Point(189, 47);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(243, 31);
@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 174);
+            this.label2.Location = new System.Drawing.Point(40, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 31);
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 284);
+            this.label3.Location = new System.Drawing.Point(40, 234);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 31);
@@ -69,7 +69,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(280, 174);
+            this.txtNombre.Location = new System.Drawing.Point(227, 120);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(338, 38);
@@ -77,7 +77,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(280, 277);
+            this.txtDescripcion.Location = new System.Drawing.Point(227, 234);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(338, 38);
@@ -85,7 +85,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(81, 389);
+            this.btnNuevo.Location = new System.Drawing.Point(81, 341);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(183, 53);
@@ -96,7 +96,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(383, 389);
+            this.btnCancelar.Location = new System.Drawing.Point(328, 341);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 53);
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(725, 513);
+            this.ClientSize = new System.Drawing.Size(615, 439);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtDescripcion);
@@ -123,6 +123,7 @@
             this.Name = "FrmCategoriasGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Productos";
+            this.Load += new System.EventHandler(this.FrmCategoriasGestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

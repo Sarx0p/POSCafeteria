@@ -155,14 +155,9 @@ namespace proyectoPOScafeteria.Capa_Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtId.Text, out int id))
-            {
-                MessageBox.Show("Seleccione un producto válido para eliminar.", "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
             //busco el producto en la lista
-            var prod = listaProductos.FirstOrDefault(x => x.Id == id);
+            var prod = listaProductos.FirstOrDefault();
             //si lo encuentro, actualizo sus propiedades
             if (prod == null)
             {
@@ -207,14 +202,9 @@ namespace proyectoPOScafeteria.Capa_Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Evento para eliminar un producto
-            if (!int.TryParse(txtId.Text, out int id))
-            {
-                MessageBox.Show("Seleccione un producto válido para eliminar.", "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            var prod = listaProductos.FirstOrDefault(x => x.Id == id);
+          
+            
+            var prod = listaProductos.FirstOrDefault();
             if (prod == null)
             {
                 MessageBox.Show("Producto no encontrado.", "Error",
@@ -237,7 +227,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
 
         private void LimpiarCampos()
         {
-            txtId.Clear();
+           
             txtNombre.Clear();
             txtDescripcion.Clear();
             txtPrecio.Clear();
@@ -250,7 +240,6 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         {
             if (dgvProductos.CurrentRow == null) return;
 
-            txtId.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
             txtNombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
             txtDescripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
             txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();

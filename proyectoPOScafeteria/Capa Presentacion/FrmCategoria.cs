@@ -23,12 +23,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             InitializeComponent();
         }
 
-        // Nombre corregido para que coincida con el evento Load asignado por el diseñador
-        private void FrmCategoria_Load(object sender, EventArgs e)
-        {
-            CargarDatos();
-            HabilitarBotones();
-        }
+        
 
         void HabilitarBotones()
         {
@@ -48,12 +43,6 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             dgvCategoria.ClearSelection();
             categoriaID = 0;   
         }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            dgvCategoria.DataSource = bll.Buscar(txtBuscar.Text);
-        }
-
         private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Si clickeamos una fila válida
@@ -182,6 +171,17 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             }
 
             return string.Empty;
+        }
+
+        private void FrmCategoria_Load_1(object sender, EventArgs e)
+        {
+            CargarDatos();
+            HabilitarBotones(); 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvCategoria.DataSource = bll.Buscar(txtBuscar.Text);
         }
     }
 }

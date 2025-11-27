@@ -29,21 +29,8 @@ namespace proyectoPOScafeteria.Capa_Presentacion
             InitializeComponent();
         }
     
-      private void FrmCategoriaGestion_Load(object sender, EventArgs e)
-        {
-            if (Modo == "Nuevo")
-            {
-                lblTitulo.Text = "AGREGAR NUEVA CATEGORÍA";
-            }
-            else
-            {
-                lblTitulo.Text = "MODIFICAR CATEGORÍA";
-                // Cargar datos en controles
-                txtNombre.Text = Nombre;
-                txtDescripcion.Text = Descripcion;
-            }
-
-        }
+      
+        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -103,6 +90,22 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close(); // Cierra sin hacer nada
+        }
+
+        private void FrmCategoriasGestion_Load(object sender, EventArgs e)
+        {
+            if (Modo == "Nuevo")
+            {
+                lblTitulo.Text = "Agregar Nueva Categoria";
+            }
+            else
+            {
+                lblTitulo.Text = "Modificar categoria";
+                // Cargar datos en controles
+                txtNombre.Text = Nombre;
+                txtDescripcion.Text = Descripcion;
+            }
+
         }
     }
 }

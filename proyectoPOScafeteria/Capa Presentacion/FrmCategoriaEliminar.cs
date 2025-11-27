@@ -30,6 +30,7 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         private void FrmCategoriaEliminar_Load(object sender, EventArgs e)
         {
             // Mostrar los datos en etiquetas
+            // Mostrar los datos en etiquetas
             txtNombre.Text = Nombre;
             txtDescripcion.Text = Descripcion;
 

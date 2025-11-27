@@ -35,13 +35,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.Location = new System.Drawing.Point(424, 365);
+            this.btnCancelar.Location = new System.Drawing.Point(402, 302);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 53);
@@ -53,7 +53,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(134, 365);
+            this.btnEliminar.Location = new System.Drawing.Point(73, 302);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(183, 53);
@@ -65,7 +65,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.txtDescripcion.Location = new System.Drawing.Point(289, 219);
+            this.txtDescripcion.Location = new System.Drawing.Point(244, 210);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(338, 38);
@@ -74,7 +74,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.txtNombre.Location = new System.Drawing.Point(289, 153);
+            this.txtNombre.Location = new System.Drawing.Point(244, 135);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(338, 38);
@@ -84,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(119, 219);
+            this.label3.Location = new System.Drawing.Point(49, 210);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 31);
@@ -95,7 +95,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(128, 153);
+            this.label2.Location = new System.Drawing.Point(49, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 31);
@@ -112,22 +112,22 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Gestión de Productos";
             // 
-            // lblTitulo
+            // label8
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(302, 41);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(212, 31);
-            this.lblTitulo.TabIndex = 14;
-            this.lblTitulo.Text = "Eliminar Categoria";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(213, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(212, 31);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Eliminar Categoria";
             // 
             // FrmCategoriaEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblTitulo);
+            this.ClientSize = new System.Drawing.Size(673, 386);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtDescripcion);
@@ -152,6 +152,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label label8;
     }
 }
