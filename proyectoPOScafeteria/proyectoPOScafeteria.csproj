@@ -69,6 +69,12 @@
     <Compile Include="Capa Presentacion\FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capa Presentacion\FrmCategoriaEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa Presentacion\FrmCategoriaEliminar.Designer.cs">
+      <DependentUpon>FrmCategoriaEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capa Presentacion\FrmCategoriasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capa Presentacion\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa Presentacion\FrmCategoriaEliminar.resx">
+      <DependentUpon>FrmCategoriaEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa Presentacion\FrmCategoriasGestion.resx">
+      <DependentUpon>FrmCategoriasGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa Presentacion\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>

@@ -11,13 +11,13 @@ namespace proyectoPOScafeteria.Capa_Datos
 {
     public  class CategoriaDAL
     {
-        public DataTable Listar()
+       public DataTable Listar()
         {
             DataTable dt = new DataTable();
 
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = "SELECT Id, NombreCategoria, Descripcion FROM Categoria";
+                string sql = "SELECT Id, NombreCategoria, Descripcion FROM CategoriaProducto";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
@@ -28,46 +28,43 @@ namespace proyectoPOScafeteria.Capa_Datos
                 }
             }
             return dt;
-
-
         }
-        
-    public int Insertar(Categoria c)
+        public int Insertar(Categoria c)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
                 // SCOPE_IDENTITY devuelve el ID recién insertado
-                string sql = @"INSERT INTO Categoria (NombreCategoria, Descripcion)
+                string sql = @"INSERT INTO CategoriaProducto (NombreCategoria, Descripcion)
                     VALUES (@NombreCategoria, @Descripcion);
                     SELECT SCOPE_IDENTITY();";
 
-
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@NombreCategoria", c.NombreCategoria);
+                    cmd.Parameters.AddWithValue("@Descripcion", (object)c.Descripcion ?? DBNull.Value);
 
-                    {
-                    cmd.Parameters.AddWithValue("@NombreCategoria", c.Nombre);
-                    cmd.Parameters.AddWithValue("@Descripcion", c.Descripcion);
                     cn.Open();
-                    // Ejecuta el INSERT y devuelve el ID recién insertado
+
+                    // ExecuteScalar devuelve un solo valor (el ID)
                     return Convert.ToInt32(cmd.ExecuteScalar());
-
-
                 }
+
+            }
+            // MÉTODO: Actualizar categoría existente
         }
-        }
-              public bool Actualizar(Categoria c)
+        public bool Actualizar(Categoria c)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = @"UPDATE Categoria SET
-                   Nombre=@NombreCategoria,
-                   Descripcion=@Descripcion
+                string sql = @"UPDATE CategoriaProducto SET
+                   NombreCategoria=@NombreCategoria,
+                   Descripcion=@descripcion
                    WHERE Id=@Id";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
                     cmd.Parameters.AddWithValue("@Id", c.Id);
-                    cmd.Parameters.AddWithValue("@NombreCategoria", c.Nombre);
+                    cmd.Parameters.AddWithValue("@NombreCategoria", c.NombreCategoria);
                     cmd.Parameters.AddWithValue("@Descripcion", (object)c.Descripcion ?? DBNull.Value);
                     /*La línea de código agrega un parámetro llamado @descripcion al comando SQL. Si la propiedad 
                      * c.Descripcion en C# es null, se envía un valor NULL a la base de datos (usando DBNull.Value); 
@@ -79,24 +76,23 @@ namespace proyectoPOScafeteria.Capa_Datos
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
-            }
+        }
 
-            public bool Eliminar(int id)
+        public bool Eliminar(int Id)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = "DELETE FROM Categoria WHERE Id=@id";
+                string sql = "DELETE FROM CategoriaProducto WHERE Id=@id";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id", Id);
 
                     cn.Open();
 
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
-
         }
         public DataTable Buscar(string filtro)
         {
@@ -105,8 +101,8 @@ namespace proyectoPOScafeteria.Capa_Datos
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
                 string sql = @"SELECT Id, NombreCategoria, Descripcion
-                               FROM Categoria
-                               WHERE Nombre LIKE @filtro 
+                               FROM CategoriaProducto
+                               WHERE NombreCategoria LIKE @filtro 
                                   OR Descripcion LIKE @filtro";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
@@ -121,61 +117,74 @@ namespace proyectoPOScafeteria.Capa_Datos
             }
             return dt;
         }
-        public bool ExisteNombre(string nombre)
+        // MÉTODO NUEVO
+
+        public bool ExisteNombre(string NombreCategoria)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = "SELECT COUNT(*) FROM Categoria WHERE Nombre = @nombre";
+                string sql = "SELECT COUNT(*) FROM CategoriaProducto WHERE NombreCategoria = @NombreCategoria";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
-                    cmd.Parameters.AddWithValue("@NombreCategoria", nombre);
+                    cmd.Parameters.AddWithValue("@NombreCategoria", NombreCategoria
+                        );
 
                     cn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 }
             }
-            }
-   public bool ExisteNombreEnOtraCategoria(string nombre, int id)
+        }
+
+        // MÉTODO NUEVO: ¿Existe el nombre en OTRA categoría?
+        // (Validación para EDITAR sin permitir duplicados)
+
+        public bool ExisteNombreEnOtraCategoria(string NombreCategoria, int id)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
                 string sql = @"SELECT COUNT(*) 
-                               FROM Categoria 
-                               WHERE Nombre = @nombre AND Id <> @id";
+                               FROM CategoriaProducto
+                               WHERE NombreCategoria = @NombreCategoria AND Id <> @Id";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
-                    cmd.Parameters.AddWithValue("@NombreCategoria", nombre);
+                    cmd.Parameters.AddWithValue("@NombreCategoria", NombreCategoria);
                     cmd.Parameters.AddWithValue("@Id", id);
 
                     cn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 }
-                }
-                }
+            }
+        }
 
-            
-               public bool TieneProductosAsociados(int idCategoria)
+        // MÉTODO NUEVO: Validar relación FK
+        // ¿Tiene productos asociados?
+
+        public bool TieneProductosAsociados(int Id_CategoriaProducto)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
                 string sql = @"SELECT COUNT(*) 
                                FROM Producto 
-                               WHERE Id_Categoria = @idCategoria";
+                               WHERE Id_CategoriaProducto = @id_CategoriaProducto";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
-                    cmd.Parameters.AddWithValue("@idCategoria", idCategoria);
+                    cmd.Parameters.AddWithValue("@id_CategoriaProducto", Id_CategoriaProducto);
 
                     cn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 }
             }
+        }
 
-            }
     }
-    }
+
+}
+    
+
+    
 
 
 

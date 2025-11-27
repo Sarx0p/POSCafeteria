@@ -27,11 +27,11 @@ namespace proyectoPOScafeteria.Capa_Negocio
         private void ValidarCategoria(Categoria c, bool esEdicion = false)
         {
             // 1. Campo obligatorio
-            if (string.IsNullOrWhiteSpace(c.Nombre))
+            if (string.IsNullOrWhiteSpace(c.NombreCategoria))
                 throw new Exception("El nombre de la categoría es obligatorio.");
 
             // 2. Longitud
-            if (c.Nombre.Length > 50)
+            if (c.NombreCategoria.Length > 50)
                 throw new Exception("El nombre no debe superar los 50 caracteres.");
 
             if (!string.IsNullOrWhiteSpace(c.Descripcion) && c.Descripcion.Length > 250)
@@ -40,12 +40,12 @@ namespace proyectoPOScafeteria.Capa_Negocio
             // 3. Validación de duplicados
             if (!esEdicion) // Caso: INSERTAR
             {
-                if (dal.ExisteNombre(c.Nombre))
+                if (dal.ExisteNombre(c.NombreCategoria))
                     throw new Exception("Ya existe una categoría con ese nombre.");
             }
             else // Caso: EDITAR
             {
-                if (dal.ExisteNombreEnOtraCategoria(c.Nombre, c.Id))
+                if (dal.ExisteNombreEnOtraCategoria(c.NombreCategoria, c.Id))
                     throw new Exception("Ya existe otra categoría con ese nombre.");
             }
         }

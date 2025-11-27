@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoPOScafeteria.Capa_Presentacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace proyectoPOScafeteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenuPrincipal());
+            Application.Run(new FrmCategoria());
         }
     }
 }
