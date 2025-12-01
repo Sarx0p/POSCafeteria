@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelizquierdo = new System.Windows.Forms.Panel();
+            this.btnPruebas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentaRapida = new System.Windows.Forms.Button();
             this.btnProducto = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@
             // panelizquierdo
             // 
             this.panelizquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelizquierdo.Controls.Add(this.btnPruebas);
             this.panelizquierdo.Controls.Add(this.btnClientes);
             this.panelizquierdo.Controls.Add(this.btnVentaRapida);
             this.panelizquierdo.Controls.Add(this.btnProducto);
@@ -73,11 +75,26 @@
             this.panelizquierdo.Controls.Add(this.btnCorteCaja);
             this.panelizquierdo.Controls.Add(this.btnInventario);
             this.panelizquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelizquierdo.Location = new System.Drawing.Point(0, 30);
+            this.panelizquierdo.Location = new System.Drawing.Point(0, 28);
             this.panelizquierdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelizquierdo.Name = "panelizquierdo";
-            this.panelizquierdo.Size = new System.Drawing.Size(191, 420);
+            this.panelizquierdo.Size = new System.Drawing.Size(191, 543);
             this.panelizquierdo.TabIndex = 0;
+            // 
+            // btnPruebas
+            // 
+            this.btnPruebas.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPruebas.Image = global::proyectoPOScafeteria.Properties.Resources.cajaicon1;
+            this.btnPruebas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPruebas.Location = new System.Drawing.Point(12, 365);
+            this.btnPruebas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPruebas.Name = "btnPruebas";
+            this.btnPruebas.Size = new System.Drawing.Size(152, 46);
+            this.btnPruebas.TabIndex = 6;
+            this.btnPruebas.Text = "Pruebas";
+            this.btnPruebas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPruebas.UseVisualStyleBackColor = true;
+            this.btnPruebas.Click += new System.EventHandler(this.btnPruebas_Click);
             // 
             // btnClientes
             // 
@@ -107,6 +124,7 @@
             this.btnVentaRapida.Text = "Venta Rapida";
             this.btnVentaRapida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentaRapida.UseVisualStyleBackColor = true;
+            this.btnVentaRapida.Click += new System.EventHandler(this.btnVentaRapida_Click_1);
             // 
             // btnProducto
             // 
@@ -128,7 +146,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::proyectoPOScafeteria.Properties.Resources.saliricon1;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(12, 360);
+            this.btnSalir.Location = new System.Drawing.Point(12, 492);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(152, 40);
@@ -171,10 +189,10 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(191, 30);
+            this.panel2.Location = new System.Drawing.Point(191, 28);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(609, 420);
+            this.panel2.Size = new System.Drawing.Size(609, 543);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -211,7 +229,7 @@
             this.menusuperior.Location = new System.Drawing.Point(0, 0);
             this.menusuperior.Name = "menusuperior";
             this.menusuperior.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menusuperior.Size = new System.Drawing.Size(800, 30);
+            this.menusuperior.Size = new System.Drawing.Size(800, 28);
             this.menusuperior.TabIndex = 2;
             this.menusuperior.Text = "menuStrip1";
             // 
@@ -222,7 +240,7 @@
             this.categoriaToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.gestionToolStripMenuItem.Text = "Gestion";
             // 
             // productosToolStripMenuItem
@@ -294,7 +312,7 @@
             this.registroDeVentasToolStripMenuItem,
             this.historialDeVentasToolStripMenuItem});
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.ventaToolStripMenuItem.Text = "Venta";
             // 
             // registroDeVentasToolStripMenuItem
@@ -316,7 +334,7 @@
             this.productoMasVendidoToolStripMenuItem,
             this.cierreDeCajaToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // reporteDiarioToolStripMenuItem
@@ -340,14 +358,14 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelizquierdo);
             this.Controls.Add(this.menusuperior);
@@ -400,6 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem productoMasVendidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cierreDeCajaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPruebas;
     }
 }
 

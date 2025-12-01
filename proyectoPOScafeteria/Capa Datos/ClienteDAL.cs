@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace proyectoPOScafeteria.Capa_Datos
                 da.Fill(dt);
                 return dt;
             }
-            
+
         }
 
         public int Insertar(Clientedos c)
@@ -115,7 +116,7 @@ namespace proyectoPOScafeteria.Capa_Datos
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
-                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Nombre", nombre);
 
                     cn.Open();
                     return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
@@ -159,8 +160,43 @@ namespace proyectoPOScafeteria.Capa_Datos
             }
         }
 
+
+    
+    public static List<Clientedos> ListarActivos()
+        {
+            List<Clientedos> lista = new List<Clientedos>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                string sql = "SELECT * FROM Cliente WHERE Estado = 1";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    con.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Clientedos
+                            {
+                                Id = Convert.ToInt32(dr["Id"]),
+                                Nombre = dr["NombreCompleto"].ToString(),
+                                Telefono = dr["Telefono"].ToString(),
+                                Estado = Convert.ToBoolean(dr["Estado"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+
     }
 }
-    
-    
+
+
+
+
 

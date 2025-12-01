@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace proyectoPOScafeteria.Capa_Entidades
 {
-    public class Ventas
+    public  class RespuestaOperacion
     {
+        public bool Exito { get; set; }
+    public string Mensaje { get; set; }
     }
 }
