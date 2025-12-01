@@ -23,12 +23,12 @@ namespace proyectoPOScafeteria.Capa_Presentacion
         {
             // --- CLIENTES ---
             cboCliente.DataSource = ClienteDAL.ListarActivos();
-            cboCliente.DisplayMember = "NombreCompleto";
+            cboCliente.DisplayMember = "Nombre";
             cboCliente.ValueMember = "Id";
 
             // --- TIPO PAGO ---
             cboMetodoPago.DataSource = MetodoPagoDAL.Listar(); //asiganmos datos al desplegable
-            cboMetodoPago.DisplayMember = "Nombre"; //lo que muestra
+            cboMetodoPago.DisplayMember = "Metodo"; //lo que muestra
             cboMetodoPago.ValueMember = "Id"; //el valor que nos importa ID
 
             // --- FECHA ---
