@@ -1,4 +1,6 @@
 ﻿using proyectoPOScafeteria.Capa_Datos;
+using proyectoPOScafeteria.Capa_Entidades;
+using proyectoPOScafeteria.Capa_Negocio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,9 +45,9 @@ namespace proyectoPOScafeteria.Capa_Datos
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 string sql = @"
-                    SELECT p.Id, p.Nombre, p.Precio, p.Stock, c.Nombre AS Categoria
+                    SELECT p.Id, p.Nombre, p.Precio, p.Stock, c.NombreCategoria AS Categoria
                     FROM Producto p
-                    INNER JOIN Categoria c ON p.Id_Categoria = c.Id
+                    INNER JOIN CategoriaProducto c ON p.Id_CategoriaProducto = c.Id
                     WHERE p.Estado = 1;";
 
                 using (SqlCommand cmd = new SqlCommand(sql, con))

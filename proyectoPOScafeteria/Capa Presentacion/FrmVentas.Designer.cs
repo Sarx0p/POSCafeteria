@@ -42,13 +42,13 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblPago = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -78,6 +78,7 @@
             this.btnRegistrarVenta.TabIndex = 14;
             this.btnRegistrarVenta.Text = "REGISTRAR VENTA";
             this.btnRegistrarVenta.UseVisualStyleBackColor = false;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
             // 
             // label1
             // 
@@ -100,6 +101,7 @@
             this.btnLimpiarDetalle.TabIndex = 10;
             this.btnLimpiarDetalle.Text = "LIMPIAR TODOS";
             this.btnLimpiarDetalle.UseVisualStyleBackColor = false;
+            this.btnLimpiarDetalle.Click += new System.EventHandler(this.btnLimpiarDetalle_Click);
             // 
             // btnQuitar
             // 
@@ -112,6 +114,7 @@
             this.btnQuitar.TabIndex = 9;
             this.btnQuitar.Text = "QUITAR PRODUCTO";
             this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // dgvDetalles
             // 
@@ -222,6 +225,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATO GENERAL DE VENTA";
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(826, 26);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 25);
+            this.dtpFecha.TabIndex = 5;
+            // 
             // dgvProductos
             // 
             this.dgvProductos.BackgroundColor = System.Drawing.Color.AliceBlue;
@@ -233,6 +243,7 @@
             this.dgvProductos.RowTemplate.Height = 28;
             this.dgvProductos.Size = new System.Drawing.Size(390, 242);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
             // btnAgregarProducto
             // 
@@ -245,6 +256,7 @@
             this.btnAgregarProducto.TabIndex = 7;
             this.btnAgregarProducto.Text = "AGREGAR PRODUCTO AL CARRITO";
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnBuscarProducto
             // 
@@ -257,6 +269,8 @@
             this.btnBuscarProducto.TabIndex = 6;
             this.btnBuscarProducto.Text = "BUSCAR";
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            this.btnBuscarProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBuscarProducto_KeyDown);
             // 
             // lblBuscar
             // 
@@ -279,6 +293,7 @@
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 
@@ -296,13 +311,6 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUCTOS";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Location = new System.Drawing.Point(826, 26);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 25);
-            this.dtpFecha.TabIndex = 5;
             // 
             // txtBuscarProducto
             // 
