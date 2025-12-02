@@ -17,7 +17,7 @@ namespace proyectoPOScafeteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVentas());
+            Application.Run(new FrmLogin());
         }
     }
 }
