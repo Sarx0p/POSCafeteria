@@ -106,7 +106,26 @@ namespace proyectoPOScafeteria
             frm.ShowDialog();
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DESEA SALIR?",
+            "Confirmación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.ShowDialog();
+
+        }
     }
+    
     }
 
                                                                                                                                              
